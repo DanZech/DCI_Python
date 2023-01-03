@@ -52,3 +52,5 @@ print(f'Is {n3} an instance of bool? {isinstance(n3, bool)}') #true
 print(f'Is {n6} an instance of float? {isinstance(n6, int)}') #false
 print()
 
+print('task 5: comment done for task 4. Please, check the code.')
+print()
