@@ -37,7 +37,6 @@ Task5
 testing if the var is a certain kind of type
 Using the "isinstance()" function
 
-'''
 print()
 n1=123 #int
 n2=43.23 #float
