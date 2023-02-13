@@ -1,0 +1,5 @@
+txt = input(('Enter here a sentence with the word Nemo: '))
+txt_lower = txt.lower()
+#print(txt_lower)
+where_is_nemo = txt_lower.find('nemo')
+print(f'I found Nemo at {where_is_nemo}' )

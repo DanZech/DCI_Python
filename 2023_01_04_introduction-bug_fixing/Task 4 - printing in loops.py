@@ -17,11 +17,9 @@ while x > 0:
     x -= 1
 '''
 
-'''
+
 countdown = 5
-while countdown > 0:
+while countdown:
     print(f"{countdown}")
     countdown -= 1
-else:
-    print("Start!")
-'''
+print("Start!")
