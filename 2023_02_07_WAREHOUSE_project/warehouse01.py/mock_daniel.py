@@ -1,7 +1,8 @@
 from data import warehouse1, warehouse2
 #from daniel import ordering
 
-user_name = input('Username: ')
+user_name = input('Username: ')  # 1. The user is asked to provide a name.
+
 while (len(user_name) <= 1):
   print('Please write your name!')
   user_name = input('Username: ')
