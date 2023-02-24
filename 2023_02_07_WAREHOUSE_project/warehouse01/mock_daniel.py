@@ -1,14 +1,21 @@
 from data import warehouse1, warehouse2
 #from daniel import ordering
 
-user_name = input('Username: ')
-while (len(user_name) <= 1):
+user_name = input('Username: ')  # 1. The user is asked to provide a name.
+
+while (len(user_name) <= 1): # avoid an empty username
   print('Please write your name!')
   user_name = input('Username: ')
-  
+
+#  The user is greeted by its name.
 print(
-    f'\nHello {user_name}\n\nChoose an option:\n1. List items by warehouse;\n2. Search an  item and place an order;\n3. Quit;\n'
-  )
+    f'\nHello {user_name}\n\n\
+      \
+    Choose an option:\n\
+    1. List items by warehouse;\n\
+    2. Search an  item and place an order;\n\
+    3. Quit;\n'
+)  # menu is printed out showing 3 options
 
 
 def ordering(w3, item_name):
@@ -22,11 +29,13 @@ def ordering(w3, item_name):
         if qtde <= w3:
           print('Thank you very much for your preference buying with us.')
         elif qtde > w3:
-          print(
-          f'\n**************************************************\nThere are not this many available.\nThe maximum amount that can be ordered is {w3}\n**************************************************\n'
-          )
-          order = input(
-            f'Would like to order all {w3} items we have in stock? (y/n) ')
+          print(f'\n**************************************************\n\
+            There are not this many available.\n\
+            The maximum amount that can be ordered is {w3}\n\
+            **************************************************\n')
+
+          order = input(f'Would like to order all {w3} items we have in stock? (y/n) ')
+
           if order == 'y':
             print(f'Thank you very much for buying all {w3} {item_name}.')
           elif order == 'n':
@@ -44,19 +53,19 @@ def ordering(w3, item_name):
       print('Invalid Character')
 
 
-while True:
+while True: 
   
   p = input('Enter your choise: ')
   o = 0
   if p == '1':  #List items by warehouse
-    print('\nItems from warehouse 1: \n')
-    for i in warehouse1:
+    print('\nItems from warehouse 1: \n') 
+    for item_w1 in warehouse1:
       o += 1
-      print(f'{o}. {i}')
+      print(f'{o}. {item_w1}')
     print('\nItems from warehouse 2: \n')
-    for j in warehouse2:
+    for item_w2 in warehouse2:
       o += 1
-      print(f'{o}. {j}')
+      print(f'{o}. {item_w2}')
       #print(f'\nThanks for your visit, {user_name}')
 
   elif p == '2':  #Search an item and place an order
@@ -64,17 +73,18 @@ while True:
     w1 = warehouse1.count(item_name)
     w2 = warehouse2.count(item_name)
     w3 = w1 + w2
-    print(f'\nTotal amount of items in both warehouses: {w3}')
+    print(f'\nTotal amount of items in stock: {w3}')
+
     if w1 > 0 and w2 > 0:
-      print('Location: both warehouse\n')
+      print('\nLocation: both warehouse\n')
     elif w1 > 0 and w2 == 0:
-      print('Location: warehouse 1\n')
+      print('\nLocation: warehouse 1\n')
     elif w1 == 0 and w2 > 0:
-      print('Location: warehouse 2\n')
+      print('\nLocation: warehouse 2\n')
     else:
       print('Not in stock')
 
-    ordering(w3, item_name)
+    ordering(w3, item_name) #call the function to place an order of item
     
   elif p == '3':
     print('Thank you for you visit')
@@ -83,4 +93,7 @@ while True:
   else:
     print('invalid Character')
 
-  print('\nChoose an option:\n1. List items by warehouse;\n2. Search an  item and place an order;\n3. Quit;\n')
+  print('\nChoose an option:\n\
+    1. List items by warehouse;\n\
+    2. Search an  item and place an order;\n\
+    3. Quit;\n')
