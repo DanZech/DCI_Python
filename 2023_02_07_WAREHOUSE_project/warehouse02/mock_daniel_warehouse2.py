@@ -1,5 +1,5 @@
 from data_warehouse2 import stock
-import datetime as dt
+from datetime import datetime as dt
 
 user_name = input('Username: ')  # 1. The user is asked to provide a name.
 while (len(user_name) <= 1): # avoid an empty username
@@ -65,13 +65,17 @@ while True:
   o = 0                                               # variable for the total counter
   if p == '1':  #List items by warehouse
     print('\nItems from warehouse 1: \n') 
-    for item_w1 in stock:
-      o += 1                                          # item counter
-      print(f'{o}. {item_w1}')
+    for item in stock:
+      if item['warehouse'] == 1:
+        o += 1                                        # item counter
+        print(f'{o}. {item["category"]}')
+
     print('\nItems from warehouse 2: \n')
-    for item_w2 in stock:
-      o += 1
-      print(f'{o}. {item_w2}')
+    for item in stock:
+      if item['warehouse'] == 1:
+        o += 1                                        # item counter
+        print(f'{o}. {item["category"]}')
+            
       #print(f'\nThanks for your visit, {user_name}')
 
   elif p == '2':  #Search an item and place an order
