@@ -1,4 +1,4 @@
-from data_warehouse2 import stock
+from data2 import stock
 from datetime import datetime as dt
 
 user_name = input('Username: ')  # 1. The user is asked to provide a name.
@@ -17,10 +17,6 @@ print(f'\nHello {user_name}\n\n\
 
 warehouse1 = []
 warehouse2 = []
-
-
-
-
 
 def ordering(w3, item_name):
 

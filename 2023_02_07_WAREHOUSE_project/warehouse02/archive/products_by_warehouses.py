@@ -1,4 +1,4 @@
-from data_warehouse2 import stock
+from data2 import stock
 
 
 def products_by_warehouses():
